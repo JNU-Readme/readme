@@ -4,12 +4,16 @@ using System.Collections;
 public class CameraWork : MonoBehaviour {
     public GameObject ball;
 
+
     // Use this for initialization
     void Start()
     {
-        ball = GameObject.Find("Ball");
-    }
+        ball = GameObject.Find("AtomBall");
 
+
+
+
+    }
     // Update is called once per frame
     void Update()
     {

@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
     public void RestartGame()
     {
         //Application.LoadLevel("Game");
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("MH_Game");
     }
 
     void RedCoinStart()

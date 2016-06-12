@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RedCoin : MonoBehaviour {
+public class MH_RedCoin : MonoBehaviour {
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.name == "Ball")

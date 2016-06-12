@@ -5,11 +5,12 @@ public class FailZone : MonoBehaviour {
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.name == "Ball")
+        if (collider.gameObject.name == "AtomBall")
         {
             //GameObject.Find("GameManager").SendMessage("RestartGame");
             //GameObject gm = GameObject.Find("GameManager");
             //GameManager gmComponent = gm.GetComponent<GameManager>();
+
             GameManager gmComponent = GameObject.Find("GameManager").GetComponent<GameManager>();
             gmComponent.RestartGame();
         }
