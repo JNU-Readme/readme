@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
     public int coinCount = 0;
     public Text coinText;
+
     void GetCoin()
     {
         coinCount++;
@@ -13,15 +14,17 @@ public class GameManager : MonoBehaviour {
         //Debug.Log("동전: " + coinCount);
     }
 
-    void RestartGame()
+    public void RestartGame()
     {
-        Application.LoadLevel("windmill");
+        //Application.LoadLevel("Game");
+        SceneManager.LoadScene("Game");
     }
 
     void RedCoinStart()
     {
         DestoryObstacles();
     }
+
     void DestoryObstacles()
     {
         GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
@@ -30,13 +33,16 @@ public class GameManager : MonoBehaviour {
             Destroy(obstacles[i]);
         }
     }
+
     // Use this for initialization
-    void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        
-	}
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }
