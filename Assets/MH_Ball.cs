@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Ball : MonoBehaviour {
+public class MH_Ball : MonoBehaviour {
     float startingPoint;
     //bool ballSpeed;
     //bool isforward;

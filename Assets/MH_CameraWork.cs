@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraWork : MonoBehaviour {
+public class MH_CameraWork : MonoBehaviour {
     public GameObject ball;
     
 	// Use this for initialization
 	void Start () {
-        ball = GameObject.Find("Ball");
+        ball = GameObject.Find("AtomBall");
 
 
 
