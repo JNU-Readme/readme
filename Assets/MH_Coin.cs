@@ -4,7 +4,7 @@ using System.Collections;
 public class MH_Coin : MonoBehaviour {
     void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.name == "Ball")
+        if(col.gameObject.name == "AtomBall")
         {
             GameObject.Find("GameManager").SendMessage("GetCoin");
             Destroy(gameObject);
