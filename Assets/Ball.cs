@@ -6,20 +6,17 @@ public class Ball : MonoBehaviour {
     //bool ballSpeed;
     //bool isforward;
     // Use this for initialization
- 
+  
+
     void Start () {
-
-
-        //Debug.Log("Start");
+                    
         startingPoint = transform.position.z;
-
-    }
-	
+           }
+ 
 	// Update is called once per frame
 	void Update () {
-        float distance;
-        distance = transform.position.z - startingPoint;
-
+        //float distance;
+        //distance = transform.position.z - startingPoint;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GetComponent<Rigidbody>().AddForce(Vector3.up * 300);
