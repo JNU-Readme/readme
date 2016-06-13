@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour {
+public class wm_GameManager : MonoBehaviour {
     public int coinCount = 0;
     public Text coinText;
 

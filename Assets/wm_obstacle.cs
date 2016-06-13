@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class obstacle : MonoBehaviour {
+public class wm_obstacle : MonoBehaviour {
     void OnCollisionEnter(Collision collision) // 충돌
     {
         Vector3 direction = transform.position - collision.gameObject.transform.position;
