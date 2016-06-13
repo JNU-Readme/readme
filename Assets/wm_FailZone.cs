@@ -1,30 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FailZone : MonoBehaviour {
+public class wm_FailZone : MonoBehaviour {
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.name == "AtomBall")
+        if (collider.gameObject.name == "Ball")
         {
-            //GameObject.Find("GameManager").SendMessage("RestartGame");
-            //GameObject gm = GameObject.Find("GameManager");
-            //GameManager gmComponent = gm.GetComponent<GameManager>();
-
-            GameManager gmComponent = GameObject.Find("GameManager").GetComponent<GameManager>();
-            gmComponent.RestartGame();
+            GameObject.Find("GameManager").SendMessage("RestartGame");
         }
     }
 
+
     // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+    void Start () {
+	
+	}
+	
+	// Update is called once per frame
+	void Update () {
+        
     }
 }

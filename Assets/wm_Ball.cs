@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Ball : MonoBehaviour {
+public class wm_Ball : MonoBehaviour {
     float startingPoint;
     //bool ballSpeed;
     //bool isforward;
@@ -17,12 +17,13 @@ public class Ball : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float distance;
-        distance = transform.position.z - startingPoint;
-
+ 
+       float distance;
+       distance = transform.position.z - startingPoint;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GetComponent<Rigidbody>().AddForce(Vector3.up * 300);
+            
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -34,7 +35,15 @@ public class Ball : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            
             GetComponent<Rigidbody>().AddForce(Vector3.forward * 100);
+           
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+
+            GetComponent<Rigidbody>().AddForce(Vector3.back * 100);
+
         }
     }
 
