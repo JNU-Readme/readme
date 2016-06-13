@@ -9,7 +9,7 @@ namespace MH
 
         void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.name == "Ball")
+            if (collision.gameObject.name == "AtomBall")
             {
                 //GameObject.Find("GameManager").SendMessage("RestartGame");
                 //GameObject gm = GameObject.Find("GameManager");

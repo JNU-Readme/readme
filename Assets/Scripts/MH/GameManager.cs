@@ -20,7 +20,7 @@ namespace MH
         public void RestartGame()
         {
 
-            SceneManager.LoadScene("windmill");
+            SceneManager.LoadScene("MH_Game");
         }
 
 
