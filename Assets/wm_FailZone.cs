@@ -3,9 +3,10 @@ using System.Collections;
 
 public class wm_FailZone : MonoBehaviour {
 
-    void OnTriggerEnter(Collider collider)
+    
+    void OnCollisionEnter(Collision collision)
     {
-        if (collider.gameObject.name == "AtomBall")
+        if (collision.gameObject.name == "AtomBall")
         {
             //GameObject.Find("GameManager").SendMessage("RestartGame");
             //GameObject gm = GameObject.Find("GameManager");
@@ -13,6 +14,8 @@ public class wm_FailZone : MonoBehaviour {
 
             wm_GameManager gmComponent = GameObject.Find("GameManager").GetComponent<wm_GameManager>();
             gmComponent.RestartGame();
+            
+
         }
     }
 
