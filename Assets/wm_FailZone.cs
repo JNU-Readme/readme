@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FailZone : MonoBehaviour {
+public class wm_FailZone : MonoBehaviour {
 
     void OnTriggerEnter(Collider collider)
     {
@@ -11,7 +11,7 @@ public class FailZone : MonoBehaviour {
             //GameObject gm = GameObject.Find("GameManager");
             //GameManager gmComponent = gm.GetComponent<GameManager>();
 
-            GameManager gmComponent = GameObject.Find("GameManager").GetComponent<GameManager>();
+            wm_GameManager gmComponent = GameObject.Find("GameManager").GetComponent<wm_GameManager>();
             gmComponent.RestartGame();
         }
     }
