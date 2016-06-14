@@ -11,7 +11,6 @@ namespace Harry
         private float cameraXYLen;
         private float cameraYZLen;
         private float cameraZXLen;
-        private int frameCount;
 
 
         // Use this for initialization
@@ -22,13 +21,10 @@ namespace Harry
             cameraXYLen = Mathf.Sqrt(Mathf.Pow(BallToCamera.x, 2) + Mathf.Pow(BallToCamera.y, 2));
             cameraYZLen = Mathf.Sqrt(Mathf.Pow(BallToCamera.y, 2) + Mathf.Pow(BallToCamera.z, 2));
             cameraZXLen = Mathf.Sqrt(Mathf.Pow(BallToCamera.z, 2) + Mathf.Pow(BallToCamera.x, 2));
-            frameCount = 0;
-            Debug.Log(cameraXYLen + " , " + cameraYZLen);
         }
         // Update is called once per frame
         void FixedUpdate()
         {
-
             Vector3 diffBallPosition = ball.transform.position - prevBallPosition;
             float angleX = 30;
             float angleY = 0;
@@ -78,26 +74,11 @@ namespace Harry
             {
                 positionZ += cameraYZLen;
             }
-            
-
-            Debug.Log(angleX + ", " + angleY + ", " + angleZ);
-            //Debug.Log(cameraYZLen + " , " + Mathf.Sin(angleX * Mathf.PI / 180) + " , " + Mathf.Sin(angleX * Mathf.PI / 360));
-            //Debug.Log(angleY + ", " + angleX + " ::: " + Mathf.Cos(angleY) + ", " + Mathf.Sin(angleY) + ", " + Mathf.Sin(angleX));
 
             transform.position = new Vector3(positionX, positionY, positionZ);
             transform.eulerAngles = new Vector3(angleX, angleY, 0);
 
             prevBallPosition = ball.transform.position;
-            frameCount = 0;
-
-            //Debug.Log(ball.transform.rotation.eulerAngles);
-            if (frameCount > 1)
-            {
-                
-            }
-            ++frameCount;
-            //transform.rotation = new Quaternion(0, ball.transform.rotation.y, 0,0);
-            //transform.LookAt(ball);
         }
     }
 }
