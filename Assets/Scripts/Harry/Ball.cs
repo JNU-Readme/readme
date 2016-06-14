@@ -26,17 +26,17 @@ namespace Harry
             {
                 GetComponent<Rigidbody>().AddForce(Vector3.up * 300);
             }
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
-                GetComponent<Rigidbody>().AddForce(Vector3.left * 200);
+                GetComponent<Rigidbody>().AddForce(Vector3.left * 5);
             }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow))
             {
-                GetComponent<Rigidbody>().AddForce(Vector3.right * 200);
+                GetComponent<Rigidbody>().AddForce(Vector3.right * 5);
             }
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow))
             {
-                GetComponent<Rigidbody>().AddForce(Vector3.forward * 100);
+                GetComponent<Rigidbody>().AddForce(Vector3.forward * 5);
             }
         }
 
