@@ -9,7 +9,8 @@ namespace MH
     {
         public int coinCount = 0;
         public Text coinText;
-
+       
+        
         void GetCoin()
         {
             coinCount++;
@@ -19,8 +20,10 @@ namespace MH
 
         public void RestartGame()
         {
-
-            SceneManager.LoadScene("MH_Game");
+            
+                SceneManager.LoadScene("MH_Game");
+        
+            
         }
 
 
