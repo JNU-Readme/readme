@@ -5,27 +5,22 @@ namespace MH
 {
     public class Ball : MonoBehaviour
     {
-        float startingPoint;
-        //bool ballSpeed;
-        //bool isforward;
-        // Use this for initialization
-
-
-        void Start()
+        float startingPoint;                                  
+        public float jumpForce = 300f;         
+        private bool grounded = false;
+        private bool jump;
+        Rigidbody rigdbody;       
+        void Awake()
         {
-
-            startingPoint = transform.position.z;
+            rigdbody = GetComponent<Rigidbody>();
         }
-
+      
         // Update is called once per frame
         void Update()
-        {
-            //float distance;
-            //distance = transform.position.z - startingPoint;
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                GetComponent<Rigidbody>().AddForce(Vector3.up * 300);
-            }
+        {    
+            CheckGround(); 
+            if (Input.GetButtonDown("Jump") && grounded)
+                jump = true;
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 GetComponent<Rigidbody>().AddForce(Vector3.left * 200);
@@ -38,6 +33,30 @@ namespace MH
             {
                 GetComponent<Rigidbody>().AddForce(Vector3.forward * 100);
             }
+
+
+        }
+        void FixedUpdate()
+        {
+            if (jump)
+            {
+                rigdbody.AddForce(new Vector3(0f, jumpForce, 0f));
+                jump = false;
+            }
+        }
+
+        void CheckGround()
+        {
+            RaycastHit hit;
+          if (Physics.Raycast(transform.position, Vector3.down, out hit, 0.9f))
+            {
+                if (hit.transform.tag == "GROUND")
+                {
+                    grounded = true;
+                    return;
+                }
+            }
+            grounded = false;
         }
 
     }
