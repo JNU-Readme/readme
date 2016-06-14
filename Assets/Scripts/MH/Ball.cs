@@ -6,7 +6,7 @@ namespace MH
     public class Ball : MonoBehaviour
     {
         float startingPoint;                                  
-        public float jumpForce = 300f;         
+        public float jumpForce = 350f;               
         private bool grounded = false;
         private bool jump;
         Rigidbody rigdbody;       
@@ -32,6 +32,7 @@ namespace MH
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 GetComponent<Rigidbody>().AddForce(Vector3.forward * 100);
+                
             }
 
 
