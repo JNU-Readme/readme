@@ -20,7 +20,7 @@ namespace Harry
         public void RestartGame()
         {
 
-            SceneManager.LoadScene("windmill");
+            SceneManager.LoadScene("Harry");
         }
 
 
