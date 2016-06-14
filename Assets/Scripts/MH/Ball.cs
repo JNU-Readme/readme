@@ -5,8 +5,8 @@ namespace MH
 {
     public class Ball : MonoBehaviour
     {
-        float startingPoint;                                  
-        public float jumpForce = 350f;               
+        float startingPoint;
+        public float jumpForce = 300f;
         private bool grounded = false;
         private bool jump;
         Rigidbody rigdbody;       
@@ -49,7 +49,7 @@ namespace MH
         void CheckGround()
         {
             RaycastHit hit;
-          if (Physics.Raycast(transform.position, Vector3.down, out hit, 0.9f))
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 0.9f))
             {
                 if (hit.transform.tag == "GROUND")
                 {
