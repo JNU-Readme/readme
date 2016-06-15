@@ -20,19 +20,18 @@ namespace MH
         {    
             CheckGround(); 
             if (Input.GetButtonDown("Jump") && grounded)
-                jump = true;
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+                jump = true;      
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
-                GetComponent<Rigidbody>().AddForce(Vector3.left * 200);
+                GetComponent<Rigidbody>().AddForce(Vector3.left * 5);
             }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow))
             {
-                GetComponent<Rigidbody>().AddForce(Vector3.right * 200);
+                GetComponent<Rigidbody>().AddForce(Vector3.right * 5);
             }
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow))
             {
-                GetComponent<Rigidbody>().AddForce(Vector3.forward * 100);
-                
+                GetComponent<Rigidbody>().AddForce(Vector3.forward * 5);
             }
 
 
@@ -43,6 +42,7 @@ namespace MH
             {
                 rigdbody.AddForce(new Vector3(0f, jumpForce, 0f));
                 jump = false;
+                GetComponent<AudioSource>().Play();
             }
         }
 
