@@ -25,7 +25,19 @@ namespace MH
         
             
         }
+        void HiddenStageStart()
+        {
+            DestoryStage();
+        }
+        void DestoryStage()
+        {
+            GameObject[] stages = GameObject.FindGameObjectsWithTag("HiddenStage");
+            for (int i = 0; i < stages.Length; i++)
+            {
+                Destroy(stages[i]);
+            }
 
+        }
 
         void RedCoinStart()
         {
