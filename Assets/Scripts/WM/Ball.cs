@@ -5,6 +5,7 @@ namespace wm
 {
     public class Ball : MonoBehaviour
     {
+        
         float startingPoint;                                  
         public float jumpForce = 300f;         
         private bool grounded = false;
@@ -15,9 +16,10 @@ namespace wm
             rigdbody = GetComponent<Rigidbody>();
         }
       
+
         // Update is called once per frame
         void Update()
-        {    
+        {
             CheckGround(); 
             if (Input.GetButtonDown("Jump") && grounded)
                 jump = true;
@@ -33,6 +35,11 @@ namespace wm
             {
                 GetComponent<Rigidbody>().AddForce(Vector3.forward * 100);
             }
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                GetComponent<Rigidbody>().AddForce(Vector3.back * 100);
+            }
+
 
 
         }
@@ -47,18 +54,25 @@ namespace wm
 
         void CheckGround()
         {
+           
             RaycastHit hit;
           if (Physics.Raycast(transform.position, Vector3.down, out hit, 0.9f))
             {
                 if (hit.transform.tag == "GROUND")
                 {
+                    
                     grounded = true;
                     return;
                 }
             }
             grounded = false;
+            
         }
 
+       
+
     }
+
+
 
 }

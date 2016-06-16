@@ -6,7 +6,7 @@ namespace wm
     public class cross_pf1 : MonoBehaviour
     {
         // Use this for initialization
-        float speed = 0.1f;
+        public float speed = 0.05f;
         void Start()
         {
         
@@ -22,12 +22,15 @@ namespace wm
                 transform.localPosition.z);
             if (transform.localPosition.x <  - 20)
             {
-                speed = 0.1f;
+                speed = 0.05f;
             }
             else if (transform.localPosition.x > + 20)
             {
-                speed = -0.1f;
+                speed = -0.05f;
             }
+
         }
+       
+
     }
 }
