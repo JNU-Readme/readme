@@ -48,6 +48,7 @@ namespace wm
             if (jump)
             {
                 rigdbody.AddForce(new Vector3(0f, jumpForce, 0f));
+                GetComponent<AudioSource>().Play();
                 jump = false;
             }
         }
