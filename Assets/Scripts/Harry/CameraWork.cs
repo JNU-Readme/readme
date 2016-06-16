@@ -34,47 +34,14 @@ namespace Harry
             float positionY = ball.transform.position.y;
             float positionZ = ball.transform.position.z;
 
-            if (diffBallPosition.z != 0)
-            {
-                angleX += Mathf.Atan2(diffBallPosition.y, diffBallPosition.z) / Mathf.PI;
-            }
-            if (diffBallPosition.z != 0)
-            {
-                angleY += Mathf.Atan2(diffBallPosition.x, Mathf.Abs(diffBallPosition.z)) * 180 / Mathf.PI;
-            }
-            if (diffBallPosition.x != 0)
-            {
-                angleZ += Mathf.Atan2(diffBallPosition.y, diffBallPosition.x) * 180 / Mathf.PI;
-            }
-
-            if (angleY > 0)
-            {
-                positionX -= Mathf.Abs(Mathf.Sin(angleY * Mathf.PI / 180) * cameraZXLen);
-                positionZ -= Mathf.Abs(Mathf.Cos(angleY * Mathf.PI / 180) * cameraZXLen);
-            }
-            else if (angleY < 0)
-            {
-                positionX += Mathf.Abs(Mathf.Sin(angleY * Mathf.PI / 180) * cameraZXLen);
-                positionZ -= Mathf.Abs(Mathf.Cos(angleY * Mathf.PI / 180) * cameraZXLen);
-            }
-            else
-            {
-                positionZ -= cameraZXLen;
-            }
-
-            if (angleX > 0)
-            {
-                positionY += Mathf.Abs(Mathf.Sin(angleX * Mathf.PI / 180) * cameraYZLen);
-            }
-            else if (angleX < 0)
-            {
-                positionY += Mathf.Abs(Mathf.Sin(angleX * Mathf.PI / 180) * cameraYZLen);
-            }
-            else
-            {
-                positionZ += cameraYZLen;
-            }
-
+            angleX += Mathf.Atan2(diffBallPosition.y, diffBallPosition.z) / Mathf.PI;
+            angleY += Mathf.Atan2(diffBallPosition.x, diffBallPosition.z) * 180 / Mathf.PI;
+            angleZ += Mathf.Atan2(diffBallPosition.y, diffBallPosition.x) * 180 / Mathf.PI;
+            
+            positionZ -= (Mathf.Cos(angleY * Mathf.PI / 180) * cameraZXLen);
+            positionX -= (Mathf.Sin(angleY * Mathf.PI / 180) * cameraZXLen);
+            positionY += (Mathf.Sin(angleX * Mathf.PI / 180) * cameraYZLen);
+            
             transform.position = new Vector3(positionX, positionY, positionZ);
             transform.eulerAngles = new Vector3(angleX, angleY, 0);
 
