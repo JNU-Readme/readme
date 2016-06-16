@@ -8,7 +8,7 @@ namespace MH
         void OnTriggerEnter(Collider col)
         {
             if (col.gameObject.name == "AtomBall")
-            {
+            {                
                 GameObject.Find("GameManager").SendMessage("GetCoin");
                 Destroy(gameObject);
             }
