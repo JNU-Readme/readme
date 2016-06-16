@@ -15,6 +15,7 @@ namespace MH
         {
             coinCount++;
             coinText.text = coinCount + "개";
+            
             //Debug.Log("동전: " + coinCount);
         }
 
