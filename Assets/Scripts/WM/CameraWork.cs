@@ -18,8 +18,8 @@ namespace wm
         void Update()
         {
             transform.position = new Vector3(ball.transform.position.x,
-                                    ball.transform.position.y + 3,
-                                    ball.transform.position.z - 14);
+                                    ball.transform.position.y + 1.16f,
+                                    ball.transform.position.z - 4.21f);
 
             //transform.rotation = new Quaternion(0, ball.transform.rotation.y, 0,0);
             //transform.LookAt(ball);

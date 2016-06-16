@@ -9,7 +9,8 @@ namespace MH
     {
         public int coinCount = 0;
         public Text coinText;
-
+       
+        
         void GetCoin()
         {
             coinCount++;
@@ -19,10 +20,28 @@ namespace MH
 
         public void RestartGame()
         {
-
-            SceneManager.LoadScene("MH_Game");
+            
+                SceneManager.LoadScene("MH_Game");
+        
+            
         }
+        public void FinishPoint()
+        {
+            Debug.Log("스테이지 클리어");
+        }
+        void HiddenStageStart()
+        {
+            DestoryStage();
+        }
+        void DestoryStage()
+        {
+            GameObject[] stages = GameObject.FindGameObjectsWithTag("HiddenStage");
+            for (int i = 0; i < stages.Length; i++)
+            {
+                Destroy(stages[i]);
+            }
 
+        }
 
         void RedCoinStart()
         {

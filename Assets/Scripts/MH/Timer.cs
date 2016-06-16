@@ -37,7 +37,7 @@ namespace MH
                 }
                 _timer.text = string.Format("{0:D2}", _minText) + ":" + string.Format("{0:D2}", _secText);
 
-                //_timer.text = string.Format("{0:D2}", _minText.ToString()) + ":" + string.Format("{0:D2}", _secText.ToString());
+             
                 _timerForText = 0;
             }
 

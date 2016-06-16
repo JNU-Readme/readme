@@ -7,7 +7,7 @@ namespace wm
     {
 
         // Use this for initialization
-        float speed = 0.5f;
+        public float speed = 0.5f;
         void Start()
         {
 
