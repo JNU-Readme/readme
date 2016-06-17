@@ -28,7 +28,7 @@ namespace MH
         }
         public void FinishPoint()
         {
-            Debug.Log("스테이지 클리어");
+            SceneManager.LoadScene("windmill");
         }
         void HiddenStageStart()
         {

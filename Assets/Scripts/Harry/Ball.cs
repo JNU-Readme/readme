@@ -70,7 +70,7 @@ namespace Harry
                 //GetComponent<Rigidbody>().AddForce(diff * -1);
             }
 
-            GetComponent<Rigidbody>().AddForce((new Vector3(x, 0, z) * speed) + diff);
+            GetComponent<Rigidbody>().AddForce((new Vector3(x, 0, z) * speed) );
 
             prevPosition = transform.position;
 

@@ -10,7 +10,7 @@ namespace MH
         private bool grounded = false;
         private bool jump;
         Rigidbody rigdbody;
-        public float speed = 6f;
+        public float speed = 8f;
 
         void Awake()
         {
@@ -19,7 +19,8 @@ namespace MH
       
         // Update is called once per frame
         void Update()
-        {         
+        {
+
             CheckGround(); 
             if (Input.GetButtonDown("Jump") && grounded)
                 jump = true;           
@@ -38,12 +39,13 @@ namespace MH
             }
             if (Input.GetKey(KeyCode.DownArrow)) //감속
             {
-                GetComponent<Rigidbody>().AddForce(Vector3.back * 1);
+                GetComponent<Rigidbody>().AddForce(Vector3.back * 2);
             }
 
         }     
         void FixedUpdate()
         {
+           
             if (jump)
             {
                 rigdbody.AddForce(new Vector3(0f, jumpForce, 0f));
@@ -54,8 +56,7 @@ namespace MH
 
             
         }
-        
-       
+      
 
         void CheckGround()
         {
